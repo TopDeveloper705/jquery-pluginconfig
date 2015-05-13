@@ -1,0 +1,13 @@
+{
+  "undef": true,
+  "predef": ["root"],
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "indent": 4,
+  "undef": true,
+  "browser": true,
+  "browserify": true,
+  "node": true,
+  "jquery": true
+}
