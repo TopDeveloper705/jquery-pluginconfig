@@ -1,0 +1,25 @@
+{
+  "name": "jquery-pluginconfig",
+  "version": "0.0.1",
+  "description": "A jQuery plugin that help use data attributes for configuration",
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "authors": [
+    "talyssonoc <talyssonoc@gmail.com>"
+  ],
+  "main": "dist/jquery-pluginconfig.js",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
