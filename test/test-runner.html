@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery-pluginconfig tests</title>
+</head>
+<body>
+  <div id="qunit"></div>
+
+  <div id="qunit-fixture">
+    <div class="fixture_1" data-plugin data-plugin-one="1" data-plugin-two="abc"></div>
+
+    <div class="fixture_2" data-plugin data-plugin-prop-one="1" data-plugin-prop-with-word="abc"></div>
+
+    <div class="fixture_3" data-plugin data-plugin-prop='{ "attr": 1 }'></div>
+  </div>
+
+  <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../dist/jquery-pluginconfig.js"></script>
+
+  <script>
+  $fixture = $("#qunit-fixture");
+
+    QUnit.test('properties with a single word', function(assert) {
+      var $fixtureOne = $fixture.find('.fixture_1');
+      var config = $fixtureOne.pluginConfig('plugin');
+
+      assert.equal(config.one, 1);
+      assert.equal(config.two, 'abc');
+    });
+
+    QUnit.test('properties with a multiple words', function(assert) {
+      var $fixtureTwo = $fixture.find('.fixture_2');
+      var config = $fixtureTwo.pluginConfig('plugin');
+
+      assert.equal(config.propOne, 1);
+      assert.equal(config.propWithWord, 'abc');
+    });
+
+    QUnit.test('properties with JSON value', function(assert) {
+      var $fixtureThree = $fixture.find('.fixture_3');
+      var config = $fixtureThree.pluginConfig('plugin');
+
+      assert.equal(config.prop.attr, 1);
+    });
+  </script>
+</body>
+</html>
